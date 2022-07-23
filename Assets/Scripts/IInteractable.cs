@@ -8,6 +8,4 @@ public interface IInteractable {
 
     public void Interact();
 
-    //Display an 'interact' prompt when in interactRange
-    //void inRange(bool entering);
 }
