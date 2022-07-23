@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sink : MonoBehaviour, IInteractable {
+public class Icebox : MonoBehaviour, IInteractable {
 
     public Tool tool;
 
@@ -17,7 +17,7 @@ public class Sink : MonoBehaviour, IInteractable {
     }
 
     void Start() {
-        tool = new Tool();
+        tool = new Tool(name);
         tool.begin();
     }
 }
