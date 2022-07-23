@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab07f6a1969cc164cb47eb534326318e, type: 3}
+  m_Name: Bob
+  m_EditorClassIdentifier: 
+  npcName: Bob
+  age: 33
+  romanceable: 1
+  playerReputation: 12
+  tavernReputation: 34
+  wealth: 5
