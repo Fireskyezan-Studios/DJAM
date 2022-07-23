@@ -20,7 +20,7 @@ public class playerBox : MonoBehaviour
 
     private GameObject closestItem;
 
-    [SerializeField] private GameObject eText;
+    [SerializeField] private GameObject fText;
 
 	void Awake() {
         interDistance = 0;
@@ -63,7 +63,7 @@ public class playerBox : MonoBehaviour
                     if (interactObject.GetComponent<IInteractable>().canInteract() == false) {
 
                         _gameObjectInteractablesInRange.Remove(interactObject);
-                        eText.SetActive(false);
+                        fText.SetActive(false);
                     }
                 } else if (_gameObjectInteractablesInRange.Count > 1) {
 
@@ -75,7 +75,7 @@ public class playerBox : MonoBehaviour
 
                         _gameObjectInteractablesInRange.Remove(interactObject);
                         
-                        eText.SetActive(false);
+                        fText.SetActive(false);
                     }
 
 
@@ -83,7 +83,7 @@ public class playerBox : MonoBehaviour
                 
             }
 
-            eText.GetComponent<TextMeshProUGUI>().text = "Press 'E' to Interact with " + findClosestInter().name;
+            fText.GetComponent<TextMeshProUGUI>().text = "Press 'F' to Interact with " + findClosestInter().name;
 
         }
         
@@ -98,7 +98,7 @@ public class playerBox : MonoBehaviour
 
                 _gameObjectInteractablesInRange.Add(interable);
 
-                eText.SetActive(true);
+                fText.SetActive(true);
 
                 /*
                 IInsideBox = true;
@@ -120,7 +120,7 @@ public class playerBox : MonoBehaviour
                 _gameObjectInteractablesInRange.Remove(interable);
 
                 if (_gameObjectInteractablesInRange.Count == 0) {
-                    eText.SetActive(false);
+                    fText.SetActive(false);
                 }
             }
 

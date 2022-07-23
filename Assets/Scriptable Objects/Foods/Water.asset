@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7307e00a0a601bc42ab43eeb344ca035, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
+  sprite: {fileID: -481655933, guid: ff8c41a8672232b40b8d2dd0e49453e9, type: 3}
   foodName: Water
-  sprite: {fileID: 21300000, guid: d6bdee78283f73547ad5a7d9dc72759f, type: 3}
+  description: Dihydrogen monoxide!
   value: 1
+  prefab: {fileID: 5488020704300927503, guid: d4a5699de2b728d41942ceb5d03f462b, type: 3}

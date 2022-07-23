@@ -21,12 +21,12 @@ public class Tool
 
     // Run in local Start method
     public void begin () {
-        Debug.Log("Start");
+        //Debug.Log("Start");
     }
 
     // Run in local Interact method (from IInteractable)
     public void act() {
-        Debug.Log(_name);
+        //Debug.Log(_name);
     }
 
     // Determines whether an item can be interacted with. Run in the canInteract method (from IInteractable)

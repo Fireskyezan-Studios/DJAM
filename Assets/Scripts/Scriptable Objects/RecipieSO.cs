@@ -9,6 +9,7 @@ public enum TOOL {
 	Bowl,
 	Keg
 }
+
 [CreateAssetMenu(fileName = "New Recipie", menuName = "Recipie")]
 public class RecipieSO : ScriptableObject
 {
@@ -22,5 +23,6 @@ public class RecipieSO : ScriptableObject
 	// In seconds
 	public int cookingDuration;
 	public FoodSO product;
+
 
 }
