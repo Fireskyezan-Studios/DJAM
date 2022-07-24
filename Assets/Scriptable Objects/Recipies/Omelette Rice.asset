@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53225bb8705c0a0479c66f8365c5cc51, type: 3}
+  m_Name: Omelette Rice
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 91e727f3b7eb9ee4ab90631da4e9e10e, type: 2}
+  - {fileID: 11400000, guid: 5d7a2ab55c0f4f54bb7894112c5be236, type: 2}
+  tool: 1
+  cookingDuration: 3
+  product: {fileID: 11400000, guid: 4f54d793e686bbe489355d8394b0d9a5, type: 2}
