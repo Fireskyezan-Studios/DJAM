@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Inter
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,13 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Overlay
+    uniqueID: 1993322873
+    locked: 0
+  - name: UI
+    uniqueID: 1149863467
+    locked: 0
+  - name: Top UI
+    uniqueID: 3224033147
     locked: 0
