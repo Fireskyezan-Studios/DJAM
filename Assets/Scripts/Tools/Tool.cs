@@ -22,7 +22,7 @@ public class Tool
     // Run in local Start method
     public void begin () {
         //Debug.Log("Start");
-    }
+    } 
 
     // Run in local Interact method (from IInteractable)
     public void act(TOOL tool, GameObject inter, GameObject inv) {
