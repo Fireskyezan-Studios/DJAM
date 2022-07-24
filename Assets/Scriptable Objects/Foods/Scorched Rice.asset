@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7307e00a0a601bc42ab43eeb344ca035, type: 3}
+  m_Name: Scorched Rice
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1586772494, guid: ff8c41a8672232b40b8d2dd0e49453e9, type: 3}
+  foodName: Scorched Rice
+  description: ' A tasty, crispy hangover cure.'
+  value: 7
+  prefab: {fileID: 5488020704300927503, guid: d4a5699de2b728d41942ceb5d03f462b, type: 3}
