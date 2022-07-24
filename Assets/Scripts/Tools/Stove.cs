@@ -8,7 +8,6 @@ public class Stove : MonoBehaviour, IInteractable {
 
     public List<RecipieSO> Recipies;
 
-    [SerializeField] private GameObject inv;
 
     [SerializeField] private GameObject inter;
 
@@ -17,7 +16,7 @@ public class Stove : MonoBehaviour, IInteractable {
     }
 
 	public void Interact() {
-        tool.act(TOOL.Stove, inter, inv);
+        tool.act(TOOL.Stove, inter);
 
     }
 

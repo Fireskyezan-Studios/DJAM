@@ -47,7 +47,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             }
 
         }
-        smallest.food = null;
+        smallest.food = default;
         smallest.taken = false;
 
     }
@@ -57,12 +57,12 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null) {
             //GameObject.Find("Inventory/Background")
             currentLoc = eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition;
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc, ).GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
         }
     }
 
     //NOTE TO SELF: THINK ABOUT EXTRA CRAFTING SLOTS! LIST APPEND??
-    public GameObject FindNearestSlot(Vector2 loc, FoodSO sustinence) {
+    public GameObject FindNearestSlot(Vector2 loc) {
         SlotSO smallest = slots[0];
         float smallestD = 10000;
         for (int i = 0; i < slots.Count; i++) {
@@ -73,7 +73,6 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                 }
             }
         }
-        smallest.food = sustinence;
         smallest.taken = true;
 
         /*if (smallest.slot == slots[40]) {
@@ -113,7 +112,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             itemsDisplayed.Add(inventory.Container[i], obj);
 
             currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
-            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc, inventory.Container[i].food).GetComponent<RectTransform>().anchoredPosition;
+            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
 
 
         }
@@ -139,6 +138,8 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             }
         }
     }
+
+
 
     /*public FoodSO Cook() {
 		slots[40]
