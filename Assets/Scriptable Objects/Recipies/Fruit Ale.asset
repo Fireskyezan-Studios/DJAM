@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53225bb8705c0a0479c66f8365c5cc51, type: 3}
+  m_Name: Fruit Ale
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 8749c1ed0301b2646b8bf7f48ef5468f, type: 2}
+  - {fileID: 11400000, guid: 6065cab451a93c54fa15533d8cc451a6, type: 2}
+  tool: 4
+  cookingDuration: 5
+  product: {fileID: 11400000, guid: 7c7f80522d86b4f45b9cb503c68bf33d, type: 2}

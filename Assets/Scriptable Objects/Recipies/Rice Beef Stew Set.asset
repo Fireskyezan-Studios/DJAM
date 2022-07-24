@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53225bb8705c0a0479c66f8365c5cc51, type: 3}
+  m_Name: Rice Beef Stew Set
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: 0634b0e6850e3334785b87a5ce7737a9, type: 2}
+  - {fileID: 11400000, guid: 5d7a2ab55c0f4f54bb7894112c5be236, type: 2}
+  tool: 3
+  cookingDuration: 2
+  product: {fileID: 11400000, guid: e4a55f78487894c4889118252018072c, type: 2}

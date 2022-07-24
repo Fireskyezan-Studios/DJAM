@@ -8,12 +8,15 @@ public class Icebox : MonoBehaviour, IInteractable {
 
     public List<RecipieSO> Recipies;
 
+
+    [SerializeField] private GameObject inter;
+
     public bool canInteract() {
         return tool.canAct();
     }
 
 	public void Interact() {
-        tool.act();
+        tool.act(TOOL.Icebox, inter);
 
     }
 

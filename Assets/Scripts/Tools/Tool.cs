@@ -22,17 +22,24 @@ public class Tool
     // Run in local Start method
     public void begin () {
         //Debug.Log("Start");
-    }
+    } 
 
     // Run in local Interact method (from IInteractable)
-    public void act() {
-        //Debug.Log(_name);
+    public void act(TOOL tool, GameObject inter) {
+        if (inter.activeInHierarchy) {
+            inter.SetActive(false);
+        } else {
+            inter.SetActive(true);
+        }
+
+        GameObject.Find("Interaction").GetComponent<DisplayInteraction>().ChangeText(tool);
     }
 
     // Determines whether an item can be interacted with. Run in the canInteract method (from IInteractable)
     public bool canAct () {
         return true;
     }
+
 
 
 }

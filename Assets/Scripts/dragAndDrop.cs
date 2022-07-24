@@ -10,6 +10,10 @@ public class dragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 	private Canvas canvasThing;
 	private CanvasGroup canvasGroup;
 
+	public InventorySlot stor;
+
+
+
 	private void Awake() {
 		canvas = GameObject.Find("Canvas");
 		canvasThing = canvas.GetComponent<Canvas>();
@@ -21,7 +25,10 @@ public class dragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 		Debug.Log("Begin Drag");
 		canvasGroup.alpha = .6f;
 		canvasGroup.blocksRaycasts = false;
-		GameObject.Find("Inventory").GetComponent<DisplayInventory>().FindNearestSlot2(eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition);
+		GameObject.Find("Player").GetComponent<pInventory>().inactivate(eventData);
+		
+
+		
 	}
 
 	public void OnDrag(PointerEventData eventData) {
