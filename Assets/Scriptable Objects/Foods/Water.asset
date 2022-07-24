@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7307e00a0a601bc42ab43eeb344ca035, type: 3}
   m_Name: Water
   m_EditorClassIdentifier: 
-  sprite: {fileID: -481655933, guid: ff8c41a8672232b40b8d2dd0e49453e9, type: 3}
+  sprite: {fileID: 21300000, guid: 709267f8f9a62574493be1a40cc65fb0, type: 3}
   foodName: Water
   description: Dihydrogen monoxide!
   value: 1

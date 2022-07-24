@@ -41,6 +41,7 @@ public class DisplayInventory : MonoBehaviour, IDropHandler
                 }
             }
         }
+        smallest.food = null;
         smallest.taken = false;
 
     }

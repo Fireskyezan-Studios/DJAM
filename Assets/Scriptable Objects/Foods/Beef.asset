@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7307e00a0a601bc42ab43eeb344ca035, type: 3}
-  m_Name: Chicken
+  m_Name: Beef
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 031d7badafe7fa04b896cc887d000e21, type: 3}
-  foodName: Chicken
-  description: Uncooked poultry
-  value: 3
+  sprite: {fileID: 21300000, guid: 7f04438965c3b544f98465bf612268df, type: 3}
+  foodName: Beef
+  description: Cow
+  value: 15
   prefab: {fileID: 5488020704300927503, guid: d4a5699de2b728d41942ceb5d03f462b, type: 3}

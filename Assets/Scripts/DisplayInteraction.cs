@@ -26,10 +26,13 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
     public int rows;
     private Vector2 currentLoc;
 
+    private TOOL selected;
+
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
-    public void ChangeText(string content) {
-        GetComponentInChildren<TextMeshProUGUI>().text = content;
+    public void ChangeText(TOOL tool) {
+        GetComponentInChildren<TextMeshProUGUI>().text = tool.ToString();
+        selected = tool;
 	}
 
     public void FindNearestSlot2(Vector2 loc) {
@@ -42,7 +45,9 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                     smallestD = Vector2.Distance(slots[i].slot.GetComponent<RectTransform>().anchoredPosition, loc);
                 }
             }
+
         }
+        smallest.food = null;
         smallest.taken = false;
 
     }
@@ -52,12 +57,12 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null) {
             //GameObject.Find("Inventory/Background")
             currentLoc = eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition;
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc, ).GetComponent<RectTransform>().anchoredPosition;
         }
     }
 
     //NOTE TO SELF: THINK ABOUT EXTRA CRAFTING SLOTS! LIST APPEND??
-    public GameObject FindNearestSlot(Vector2 loc) {
+    public GameObject FindNearestSlot(Vector2 loc, FoodSO sustinence) {
         SlotSO smallest = slots[0];
         float smallestD = 10000;
         for (int i = 0; i < slots.Count; i++) {
@@ -68,7 +73,15 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                 }
             }
         }
+        smallest.food = sustinence;
         smallest.taken = true;
+
+        /*if (smallest.slot == slots[40]) {
+			slots[40].food = 
+		} else if (smallest.slot == slots[41]) {
+
+		}*/
+
         return smallest.slot;
 
     }
@@ -100,7 +113,9 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             itemsDisplayed.Add(inventory.Container[i], obj);
 
             currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
-            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
+            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc, inventory.Container[i].food).GetComponent<RectTransform>().anchoredPosition;
+
+
         }
 	}
 
@@ -124,4 +139,11 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             }
         }
     }
+
+    /*public FoodSO Cook() {
+		slots[40]
+        slots[41]
+    }*/
+
+
 }

@@ -6,4 +6,5 @@ using UnityEngine;
 public class SlotSO : ScriptableObject {
     public GameObject slot;
     public bool taken;
+    public FoodSO food;
 }

@@ -34,7 +34,7 @@ public class Tool
             }
         }
 
-        GameObject.Find("Interaction").GetComponent<DisplayInteraction>().ChangeText(tool.ToString());
+        GameObject.Find("Interaction").GetComponent<DisplayInteraction>().ChangeText(tool);
     }
 
     // Determines whether an item can be interacted with. Run in the canInteract method (from IInteractable)
@@ -42,8 +42,6 @@ public class Tool
         return true;
     }
 
-    public FoodSO Cook (RecipieSO recipie, TOOL tool) {
-        return recipie.product;
-	}
+
 
 }
