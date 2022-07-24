@@ -8,12 +8,23 @@ public class pInventory : MonoBehaviour
 
 	[SerializeField] private GameObject inv;
 
+	[SerializeField] private GameObject inter;
+
 	public void Update() {
 		if (Input.GetButtonDown("Inventory")) {
-			if (inv.activeSelf) {
+			if (inv.active) {
 				inv.SetActive(false);
 			} else {
-				inv.SetActive(true);
+				if (!inter.active) {
+					inv.SetActive(true);
+				}
+			}
+
+		}
+
+		if (Input.GetButtonDown("Interact")) {
+			if (inter.active) {
+				inter.SetActive(false);
 			}
 
 		}

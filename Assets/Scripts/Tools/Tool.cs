@@ -25,8 +25,14 @@ public class Tool
     }
 
     // Run in local Interact method (from IInteractable)
-    public void act() {
-        //Debug.Log(_name);
+    public void act(String name, GameObject inter, GameObject inv) {
+        if (inter.activeSelf) {
+            inter.SetActive(false);
+        } else {
+            if (!inv.activeSelf) {
+                inter.SetActive(true);
+            }
+        }
     }
 
     // Determines whether an item can be interacted with. Run in the canInteract method (from IInteractable)

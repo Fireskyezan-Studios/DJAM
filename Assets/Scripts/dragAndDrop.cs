@@ -22,6 +22,7 @@ public class dragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 		canvasGroup.alpha = .6f;
 		canvasGroup.blocksRaycasts = false;
 		GameObject.Find("Inventory").GetComponent<DisplayInventory>().FindNearestSlot2(eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition);
+		GameObject.Find("Interact").GetComponent<DisplayInteraction>().FindNearestSlot2(eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition);
 	}
 
 	public void OnDrag(PointerEventData eventData) {
