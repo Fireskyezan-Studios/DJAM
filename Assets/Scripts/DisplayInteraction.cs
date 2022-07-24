@@ -14,16 +14,8 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public Inventory inventory;
 
-    public int xStart;
-    public int yStart;
 
 
-    public int xSpacing;
-
-    public int ySpacing;
-
-    public int columns;
-    public int rows;
     private Vector2 currentLoc;
 
     private TOOL selected;
@@ -73,6 +65,9 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                 }
             }
         }
+
+        smallest.food = ;
+
         smallest.taken = true;
 
         /*if (smallest.slot == slots[40]) {

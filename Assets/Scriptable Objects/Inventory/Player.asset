@@ -17,3 +17,5 @@ MonoBehaviour:
     amount: 4
   - food: {fileID: 11400000, guid: accc30ac7e2769841af3cdaa77147dae, type: 2}
     amount: 3
+  - food: {fileID: 11400000, guid: cafdddf68f226594eac96ed7942890f0, type: 2}
+    amount: 5
