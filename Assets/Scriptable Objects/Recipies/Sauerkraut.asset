@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53225bb8705c0a0479c66f8365c5cc51, type: 3}
+  m_Name: Sauerkraut
+  m_EditorClassIdentifier: 
+  ingredients:
+  - {fileID: 11400000, guid: e033072824142ef40b8399d5d7eeebd3, type: 2}
+  tool: 4
+  cookingDuration: 3
+  product: {fileID: 0}
