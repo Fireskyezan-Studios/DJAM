@@ -6,7 +6,8 @@ public class Icebox : MonoBehaviour, IInteractable {
 
     public Tool tool;
 
-    
+    public List<RecipieSO> Recipies;
+
     public bool canInteract() {
         return tool.canAct();
     }
