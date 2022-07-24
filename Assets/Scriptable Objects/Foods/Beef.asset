@@ -16,4 +16,4 @@ MonoBehaviour:
   foodName: Beef
   description: 
   value: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 5488020704300927503, guid: d4a5699de2b728d41942ceb5d03f462b, type: 3}

@@ -8,7 +8,6 @@ public class Icebox : MonoBehaviour, IInteractable {
 
     public List<RecipieSO> Recipies;
 
-    [SerializeField] private GameObject inv;
 
     [SerializeField] private GameObject inter;
 
@@ -17,7 +16,7 @@ public class Icebox : MonoBehaviour, IInteractable {
     }
 
 	public void Interact() {
-        tool.act(TOOL.Icebox, inter, inv);
+        tool.act(TOOL.Icebox, inter);
 
     }
 
