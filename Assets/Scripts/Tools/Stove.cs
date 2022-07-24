@@ -17,7 +17,7 @@ public class Stove : MonoBehaviour, IInteractable {
     }
 
 	public void Interact() {
-        tool.act(name, inter, inv);
+        tool.act(TOOL.Stove, inter, inv);
 
     }
 

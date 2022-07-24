@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1848dad7ef7514787a2ddc88ba1880, type: 3}
   m_Name: 2,4
   m_EditorClassIdentifier: 
-  slot: {fileID: 1652703532484730534, guid: f9a3cf583a505114fb60e23e50c4dd2d, type: 3}
+  slot: {fileID: 7680293005719051535, guid: 57e0a4e830b6b3f489d78bc6bb29cca7, type: 3}
   taken: 0

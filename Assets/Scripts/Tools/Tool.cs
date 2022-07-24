@@ -25,14 +25,16 @@ public class Tool
     }
 
     // Run in local Interact method (from IInteractable)
-    public void act(String name, GameObject inter, GameObject inv) {
-        if (inter.activeSelf) {
+    public void act(TOOL tool, GameObject inter, GameObject inv) {
+        if (inter.activeInHierarchy) {
             inter.SetActive(false);
         } else {
-            if (!inv.activeSelf) {
+            if (!inv.activeInHierarchy) {
                 inter.SetActive(true);
             }
         }
+
+        GameObject.Find("Interaction").GetComponent<DisplayInteraction>().ChangeText(tool.ToString());
     }
 
     // Determines whether an item can be interacted with. Run in the canInteract method (from IInteractable)
@@ -40,5 +42,8 @@ public class Tool
         return true;
     }
 
+    public FoodSO Cook (RecipieSO recipie, TOOL tool) {
+        return recipie.product;
+	}
 
 }

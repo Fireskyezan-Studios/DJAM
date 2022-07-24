@@ -28,7 +28,9 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
-
+    public void ChangeText(string content) {
+        GetComponentInChildren<TextMeshProUGUI>().text = content;
+	}
 
     public void FindNearestSlot2(Vector2 loc) {
         SlotSO smallest = slots[0];
@@ -91,6 +93,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
         for (int i = 0; i < inventory.Container.Count; i++) {
             var obj = Instantiate(inventory.Container[i].food.prefab, Vector2.zero, Quaternion.identity, transform);
+            obj.GetComponent<RectTransform>().localScale = new Vector2((float)2.5, (float)2.5);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             obj.GetComponent<Image>().sprite = inventory.Container[i].food.sprite;
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");

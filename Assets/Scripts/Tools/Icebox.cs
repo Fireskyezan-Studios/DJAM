@@ -17,7 +17,7 @@ public class Icebox : MonoBehaviour, IInteractable {
     }
 
 	public void Interact() {
-        tool.act(name, inter, inv);
+        tool.act(TOOL.Icebox, inter, inv);
 
     }
 
