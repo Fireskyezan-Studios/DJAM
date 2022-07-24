@@ -14,7 +14,9 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public Inventory inventory;
 
+    public List<RecipieSO> recipies;
 
+    public SlotSO oSlot;
 
     private Vector2 currentLoc;
 
@@ -139,10 +141,44 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         }
     }
 
+    public void cook() {
+
+        SlotSO ing1 = slots[40];
+        SlotSO ing2 = slots[41];
+
+
+        List<SlotSO> sList = new List<SlotSO> { };
+
+        if (ing1 != null) {
+            sList.Add(ing1);
+        }
+
+        if (ing2 != null) {
+            sList.Add(ing2);
+        }
+
+        if (sList.Count > 0) {
+			for (int i = 0; i < inventory.Container.Count; i++) {
+                for (int j = 0; j < sList.Count; j++) {
+                    if (inventory.Container[i].food == sList[j].food) {
+                        inventory.Container[i].amount -= 1;
+                    }
+                }
+			}
+
+
+
+
+
+
+
+        }
+    }
+
 
 
     /*public FoodSO Cook() {
-		slots[40]
+		slots[40] 
         slots[41]
     }*/
 
