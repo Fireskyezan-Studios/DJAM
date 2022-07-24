@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53225bb8705c0a0479c66f8365c5cc51, type: 3}
-  m_Name: New Recipie
+  m_Name: Rice Chicken Soup Set
   m_EditorClassIdentifier: 
   ingredients:
   - {fileID: 11400000, guid: 5d7a2ab55c0f4f54bb7894112c5be236, type: 2}

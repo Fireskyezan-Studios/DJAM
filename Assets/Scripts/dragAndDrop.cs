@@ -10,6 +10,10 @@ public class dragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 	private Canvas canvasThing;
 	private CanvasGroup canvasGroup;
 
+	public InventorySlot stor;
+
+
+
 	private void Awake() {
 		canvas = GameObject.Find("Canvas");
 		canvasThing = canvas.GetComponent<Canvas>();
