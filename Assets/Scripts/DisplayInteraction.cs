@@ -49,12 +49,14 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null) {
             //GameObject.Find("Inventory/Background")
             currentLoc = eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition;
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
+            SlotSO slott = FindNearestSlot(currentLoc);
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = slott.slot.GetComponent<RectTransform>().anchoredPosition;
+            slott.food = eventData.pointerDrag.GetComponent<dragAndDrop>().stor.food;
         }
     }
 
     //NOTE TO SELF: THINK ABOUT EXTRA CRAFTING SLOTS! LIST APPEND??
-    public GameObject FindNearestSlot(Vector2 loc) {
+    public SlotSO FindNearestSlot(Vector2 loc) {
         SlotSO smallest = slots[0];
         float smallestD = 10000;
         for (int i = 0; i < slots.Count; i++) {
@@ -66,7 +68,6 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             }
         }
 
-        smallest.food = ;
 
         smallest.taken = true;
 
@@ -76,7 +77,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
 		}*/
 
-        return smallest.slot;
+        return smallest;
 
     }
 
@@ -107,8 +108,11 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             itemsDisplayed.Add(inventory.Container[i], obj);
 
             currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
-            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
+            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).slot.GetComponent<RectTransform>().anchoredPosition;
+            slots[i].food = inventory.Container[i].food;
 
+            obj.GetComponent<dragAndDrop>().stor.food = inventory.Container[i].food;
+            obj.GetComponent<dragAndDrop>().stor.amount = inventory.Container[i].amount;
 
         }
 	}
@@ -129,7 +133,8 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                 itemsDisplayed.Add(inventory.Container[i], obj);
 
                 currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
-                obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
+                obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).slot.GetComponent<RectTransform>().anchoredPosition;
+                slots[i].food = inventory.Container[i].food;
             }
         }
     }
