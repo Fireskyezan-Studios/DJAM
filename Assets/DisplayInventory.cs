@@ -29,8 +29,24 @@ public class DisplayInventory : MonoBehaviour, IDropHandler
     Dictionary<InventorySlot, GameObject> itemsDisplayed = new Dictionary<InventorySlot, GameObject>();
 
 
+
+    public void FindNearestSlot2(Vector2 loc) {
+        SlotSO smallest = slots[0];
+        float smallestD = 10000;
+        for (int i = 0; i < slots.Count; i++) {
+            if (Vector2.Distance(slots[i].slot.GetComponent<RectTransform>().anchoredPosition, loc) < smallestD) {
+                if (slots[i].taken) {
+                    smallest = slots[i];
+                    smallestD = Vector2.Distance(slots[i].slot.GetComponent<RectTransform>().anchoredPosition, loc);
+                }
+            }
+        }
+        smallest.taken = false;
+
+    }
+
     public void OnDrop(PointerEventData eventData) {
-        Debug.Log("Drop");
+        //Debug.Log("Drop");
         if (eventData.pointerDrag != null) {
             //GameObject.Find("Inventory/Background")
             currentLoc = eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition;
@@ -40,21 +56,28 @@ public class DisplayInventory : MonoBehaviour, IDropHandler
 
     //NOTE TO SELF: THINK ABOUT EXTRA CRAFTING SLOTS! LIST APPEND??
     public GameObject FindNearestSlot(Vector2 loc) {
-        GameObject smallest = slots[0].slot;
+        SlotSO smallest = slots[0];
         float smallestD = 10000;
         for (int i = 0; i < slots.Count; i++) {
 			if (Vector2.Distance(slots[i].slot.GetComponent<RectTransform>().anchoredPosition, loc) < smallestD) {
-                smallest = slots[i].slot;
-                smallestD = Vector2.Distance(slots[i].slot.GetComponent<RectTransform>().anchoredPosition, loc);
-
+                if (!slots[i].taken) {
+                    smallest = slots[i];
+                    smallestD = Vector2.Distance(slots[i].slot.GetComponent<RectTransform>().anchoredPosition, loc);
+                }
             }
         }
-        return smallest;
+        smallest.taken = true;
+        return smallest.slot;
 
     }
+
+    
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < slots.Count; i++) {
+            slots[i].taken = false;
+        }
         CreateDisplay();
     }
 
@@ -72,10 +95,13 @@ public class DisplayInventory : MonoBehaviour, IDropHandler
             obj.GetComponent<Image>().sprite = inventory.Container[i].food.sprite;
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             itemsDisplayed.Add(inventory.Container[i], obj);
+
+            currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
+            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
         }
 	}
 
-    public Vector2 GetPosition(int i) {
+    public Vector2 GetPosition(int i) { 
         return slots[i].slot.GetComponent<RectTransform>().anchoredPosition;
 	}
 
@@ -89,6 +115,9 @@ public class DisplayInventory : MonoBehaviour, IDropHandler
                 obj.GetComponent<Image>().sprite = inventory.Container[i].food.sprite;
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
                 itemsDisplayed.Add(inventory.Container[i], obj);
+
+                currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
+                obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).GetComponent<RectTransform>().anchoredPosition;
             }
         }
     }
