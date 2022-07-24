@@ -213,7 +213,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1254412261}
         m_TargetAssemblyTypeName: DisplayInteraction, Assembly-CSharp
-        m_MethodName: StartCooking
+        m_MethodName: cook
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -785,7 +785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Recipies: []
-  inv: {fileID: 0}
   inter: {fileID: 1254412259}
 --- !u!61 &836952029
 BoxCollider2D:
@@ -1033,12 +1032,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7dfe9b874f1063c418ad2e00192ed9cd, type: 2}
   - {fileID: 11400000, guid: 4d1322cf8bdca70498d9108bc88a07ff, type: 2}
   inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
-  xStart: 0
-  yStart: 0
-  xSpacing: 0
-  ySpacing: 0
-  columns: 0
-  rows: 0
+  recipies: []
+  oSlot: {fileID: 11400000, guid: 59e8300ce4555cf40a2fddd1191a8cbc, type: 2}
 --- !u!224 &1259768155 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 957416812715707775, guid: a4952b0efd2bafe4d83a155c230fdbee, type: 3}
@@ -1122,7 +1117,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Recipies:
   - {fileID: 11400000, guid: b12d9601cec480e498a72cb8e798d214, type: 2}
-  inv: {fileID: 0}
   inter: {fileID: 1254412259}
 --- !u!224 &1480663416 stripped
 RectTransform:
@@ -1965,7 +1959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
-  inv: {fileID: 0}
   inter: {fileID: 1254412259}
 --- !u!224 &1803603193 stripped
 RectTransform:
