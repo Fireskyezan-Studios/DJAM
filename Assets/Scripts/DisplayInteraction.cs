@@ -187,6 +187,9 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
 
         List<SlotSO> sList = new List<SlotSO> { };
+        List<FoodSO> fList = new List<FoodSO> { };
+
+        List<FoodSO> rList = new List<FoodSO> { };
 
         if (ing1 != null) {
             sList.Add(ing1);
@@ -206,15 +209,28 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 			}
 
 
+            if (sList.Count = 
 
 
+            /*
+            for (int i = 0; i < sList.Count; i++) {
+                fList.Add(sList[i].food);
+            }
 
+            for (int i = 0; i < recipies.Count; i++) {
+                rList.Add(recipies[i].ingredients.food);
+            }
 
+            var hList = new HashSet<FoodSO>(fList);
+            var hRecipies = new HashSet<RecipieSO>(recipies);
+
+            if (hList.SetEquals(list2);)*/
+
+                     
 
         }
     }
-
-
+     
 
     /*public FoodSO Cook() {
 		slots[40] 
