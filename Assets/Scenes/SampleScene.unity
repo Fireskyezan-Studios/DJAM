@@ -1032,7 +1032,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7dfe9b874f1063c418ad2e00192ed9cd, type: 2}
   - {fileID: 11400000, guid: 4d1322cf8bdca70498d9108bc88a07ff, type: 2}
   inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
-  recipies: []
+  recipies:
+  - {fileID: 11400000, guid: f552454536f60e64da456bdef5906517, type: 2}
   oSlot: {fileID: 11400000, guid: 59e8300ce4555cf40a2fddd1191a8cbc, type: 2}
   columns: 0
   rows: 0
@@ -1117,8 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c2685df59e10b47b4e3fc903e307e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Recipies:
-  - {fileID: 11400000, guid: b12d9601cec480e498a72cb8e798d214, type: 2}
+  Recipies: []
   inter: {fileID: 1254412259}
 --- !u!224 &1480663416 stripped
 RectTransform:

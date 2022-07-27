@@ -64,16 +64,16 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         {
             //GameObject.Find("Inventory/Background")
             currentLoc = eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition;
-            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(
-                    currentLoc
-                )
-                .GetComponent<RectTransform>()
-                .anchoredPosition;
+
+            SlotSO slott = FindNearestSlot(currentLoc);
+            eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = slott.slot.GetComponent<RectTransform>().anchoredPosition;
+
+            slott.food = eventData.pointerDrag.GetComponent<dragAndDrop>().stor.food;
         }
     }
 
     //NOTE TO SELF: THINK ABOUT EXTRA CRAFTING SLOTS! LIST APPEND??
-    public GameObject FindNearestSlot(Vector2 loc)
+    public SlotSO FindNearestSlot(Vector2 loc)
     {
         SlotSO smallest = slots[0];
         float smallestD = 10000;
@@ -97,7 +97,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
         smallest.taken = true;
 
-        return smallest.slot;
+        return smallest;
     }
 
     // Start is called before the first frame update
@@ -106,6 +106,8 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         for (int i = 0; i < slots.Count; i++)
         {
             slots[i].taken = false;
+            slots[i].food = default;
+
         }
         CreateDisplay();
     }
@@ -129,15 +131,14 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             obj.GetComponent<RectTransform>().localScale = new Vector2((float)2.5, (float)2.5);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             obj.GetComponent<Image>().sprite = inventory.Container[i].food.sprite;
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[
-                i
-            ].amount.ToString("n0");
+            obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
             itemsDisplayed.Add(inventory.Container[i], obj);
 
             currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
-            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc)
-                .GetComponent<RectTransform>()
-                .anchoredPosition;
+            obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).slot.GetComponent<RectTransform>().anchoredPosition;
+
+            obj.GetComponent<dragAndDrop>().stor.food = inventory.Container[i].food;
+            obj.GetComponent<dragAndDrop>().stor.amount = inventory.Container[i].amount;
         }
     }
 
@@ -172,9 +173,12 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                 itemsDisplayed.Add(inventory.Container[i], obj);
 
                 currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
-                obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc)
+                obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).slot
                     .GetComponent<RectTransform>()
                     .anchoredPosition;
+
+                obj.GetComponent<dragAndDrop>().stor.food = inventory.Container[i].food;
+                obj.GetComponent<dragAndDrop>().stor.amount = inventory.Container[i].amount;
             }
         }
     }
@@ -189,13 +193,13 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         List<SlotSO> sList = new List<SlotSO> { };
         List<FoodSO> fList = new List<FoodSO> { };
 
-        List<FoodSO> rList = new List<FoodSO> { };
+        List<RecipieSO> rList = new List<RecipieSO> { };
 
-        if (ing1 != null) {
+        if (ing1.food != null) {
             sList.Add(ing1);
         }
 
-        if (ing2 != null) {
+        if (ing2.food != null) {
             sList.Add(ing2);
         }
 
@@ -208,8 +212,38 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                 }
 			}
 
+            for(int i = 0; i < sList.Count; i++) {
+                fList.Add(sList[i].food);
+			}
 
-            if (sList.Count = 
+            var hList = new HashSet<FoodSO>(fList);
+
+            for (int i = 0; i < recipies.Count; i++) {
+                rList.Add(recipies[i]);
+            }
+            
+            
+            if (sList.Count == 1) {
+                for (int i = 0; i < recipies.Count; i++) {
+                    if (sList[0].food == recipies[i].ingredients[0]) {
+                        //selected
+                        inventory.AddItem(recipies[i].product, 1);
+
+                    }
+                }
+            } 
+            else {
+                for (int i = 0; i < rList.Count; i++) {
+                    var hRecipies = new HashSet<FoodSO>(rList[i].ingredients);
+
+                    if (hList.SetEquals(hRecipies) && selected == rList[i].tool) {
+                        inventory.AddItem(recipies[i].product, 1);
+                        break;
+                    }
+                }
+                
+            }
+           
 
 
             /*
