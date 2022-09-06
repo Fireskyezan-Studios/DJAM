@@ -153,9 +153,12 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         {
             if (itemsDisplayed.ContainsKey(inventory.Container[i]))
             {
+
                 itemsDisplayed[inventory.Container[i]]
                     .GetComponentInChildren<TextMeshProUGUI>()
                     .text = inventory.Container[i].amount.ToString("n0");
+
+                
             }
             else
             {
@@ -185,6 +188,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
 
     public void cook() {
+        
 
         SlotSO ing1 = slots[40];
         SlotSO ing2 = slots[41];
@@ -204,35 +208,102 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         }
 
         if (sList.Count > 0) {
+
+            bool canCraft = true;
+            bool recipieFound = false;
+
+            //we need to check if the recipie is valid and you have enough materials in your inventory
+
+            //Add all given recipies to rList
+			for (int i = 0; i < recipies.Count; i++) {
+				rList.Add(recipies[i]);
+			}
+
+            
+            //Iterates over inventory, and ingredients then subtracts 1 from each ingredient.
 			for (int i = 0; i < inventory.Container.Count; i++) {
                 for (int j = 0; j < sList.Count; j++) {
                     if (inventory.Container[i].food == sList[j].food) {
-                        inventory.Container[i].amount -= 1;
-                    }
+                        if (inventory.Container[i].amount <= 0) {
+				            canCraft = false;
+				            
+			            } else {
+                            
+				            //inventory.Container[i].amount -= 1;
+			            }
+
+		            }
                 }
 			}
 
-            for(int i = 0; i < sList.Count; i++) {
-                fList.Add(sList[i].food);
+			//iterates over ingredients then adds food values to flist
+			for (int i = 0; i < sList.Count; i++) {
+				fList.Add(sList[i].food);
 			}
 
-            var hList = new HashSet<FoodSO>(fList);
+			var hList = new HashSet<FoodSO>(fList);
 
-            for (int i = 0; i < recipies.Count; i++) {
-                rList.Add(recipies[i]);
+			// If there's only 1 ingredient, check all recipies and add product to inventory
+			if (sList.Count == 1) {
+				for (int i = 0; i < recipies.Count; i++) {
+					if (sList[0].food == recipies[i].ingredients[0]) {
+                        //selected
+                        //inventory.AddItem(recipies[i].product, 1);
+                        recipieFound = true;
+                        break;
+					}
+				}
+			}
+			// If there's more than 1 ingredient, check all recipies and add product to inventory
+			else {
+				for (int i = 0; i < rList.Count; i++) {
+					var hRecipies = new HashSet<FoodSO>(rList[i].ingredients);
+
+					if (hList.SetEquals(hRecipies) && selected == rList[i].tool) {
+						//inventory.AddItem(recipies[i].product, 1);
+                        recipieFound=true;
+						break;
+					}
+				}
+
+			}
+
+            if (!recipieFound) {
+                canCraft=false;
             }
-            
-            
-            if (sList.Count == 1) {
+
+			if (!canCraft) {
+                return;
+            }
+
+			//Iterates over inventory, and ingredients then subtracts 1 from each ingredient.
+			for (int i = 0; i < inventory.Container.Count; i++) {
+				for (int j = 0; j < sList.Count; j++) {
+					if (inventory.Container[i].food == sList[j].food) {
+						if (inventory.Container[i].amount > 0) {
+							inventory.Container[i].amount -= 1;
+
+						}
+
+					}
+				}
+			}
+
+
+
+			// If there's only 1 ingredient, check all recipies and add product to inventory
+			if (sList.Count == 1) {
                 for (int i = 0; i < recipies.Count; i++) {
                     if (sList[0].food == recipies[i].ingredients[0]) {
                         //selected
                         inventory.AddItem(recipies[i].product, 1);
+                        break;
 
                     }
                 }
-            } 
-            else {
+            }
+			// If there's more than 1 ingredient, check all recipies and add product to inventory
+			else {
                 for (int i = 0; i < rList.Count; i++) {
                     var hRecipies = new HashSet<FoodSO>(rList[i].ingredients);
 
