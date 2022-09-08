@@ -32,7 +32,14 @@ public class Tool
             inter.SetActive(true);
         }
 
-        GameObject.Find("Interaction").GetComponent<DisplayInteraction>().ChangeText(tool);
+		GameObject bob = GameObject.Find("Interaction");
+
+		if (bob != null) {
+			
+
+			bob.GetComponent<DisplayInteraction>().ChangeText(tool);
+		}
+            
     }
 
     // Determines whether an item can be interacted with. Run in the canInteract method (from IInteractable)

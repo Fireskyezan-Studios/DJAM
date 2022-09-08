@@ -1118,7 +1118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c2685df59e10b47b4e3fc903e307e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Recipies: []
+  Recipies:
+  - {fileID: 11400000, guid: f552454536f60e64da456bdef5906517, type: 2}
   inter: {fileID: 1254412259}
 --- !u!224 &1480663416 stripped
 RectTransform:

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 using UnityEngine.UI;
+using System.Xml;
+using static UnityEngine.EventSystems.EventTrigger;
+using Newtonsoft.Json.Linq;
 
 public class DisplayInteraction : MonoBehaviour, IDropHandler
 {
@@ -100,6 +103,17 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         return smallest;
     }
 
+    public void slotUpdate (InventorySlot s) {
+
+        for (int i = 0; slots.Count > i; i++) {
+			if (slots[i].food == s.food) {
+				slots[i].taken = false;
+				slots[i].food = default;
+			}
+		}
+
+	}
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,6 +130,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
     void Update()
     {
         UpdateDisplay();
+        
     }
 
     public void CreateDisplay()
@@ -132,7 +147,8 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
             obj.GetComponent<Image>().sprite = inventory.Container[i].food.sprite;
             obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
-            itemsDisplayed.Add(inventory.Container[i], obj);
+			obj.name = inventory.Container[i].food.name;
+			itemsDisplayed.Add(inventory.Container[i], obj);
 
             currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
             obj.GetComponent<RectTransform>().anchoredPosition = FindNearestSlot(currentLoc).slot.GetComponent<RectTransform>().anchoredPosition;
@@ -149,9 +165,49 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public void UpdateDisplay()
     {
+
+        
+
         for (int i = 0; i < inventory.Container.Count; i++)
         {
-            if (itemsDisplayed.ContainsKey(inventory.Container[i]))
+
+            
+
+            
+            if (inventory.Container.Count < itemsDisplayed.Count) {
+
+				bool exists = false;
+
+				InventorySlot slotte = null;
+
+				foreach (KeyValuePair<InventorySlot, GameObject> entry in itemsDisplayed) {
+					exists = false;
+					slotte = entry.Key;
+
+					for (int j = 0; j < inventory.Container.Count; j++) {
+						
+						if (entry.Key == inventory.Container[j]) {
+							exists = true;
+						}
+					}
+
+    				if (exists == false && slotte != null) {
+						slotUpdate(slotte);
+						itemsDisplayed.Remove(slotte);
+                        Destroy(GameObject.Find(slotte.food.name));
+						
+						break;
+					}
+
+				}
+
+
+				
+			}
+			
+
+
+			if (itemsDisplayed.ContainsKey(inventory.Container[i]))
             {
 
                 itemsDisplayed[inventory.Container[i]]
@@ -173,6 +229,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                 obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[
                     i
                 ].amount.ToString("n0");
+                obj.name = inventory.Container[i].food.name;
                 itemsDisplayed.Add(inventory.Container[i], obj);
 
                 currentLoc = obj.GetComponent<RectTransform>().anchoredPosition;
@@ -189,12 +246,16 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public void cook() {
         
+        
 
         SlotSO ing1 = slots[40];
         SlotSO ing2 = slots[41];
 
+        Debug.Log(ing1.food);
+		Debug.Log(ing2.food);
 
-        List<SlotSO> sList = new List<SlotSO> { };
+
+		List<SlotSO> sList = new List<SlotSO> { };
         List<FoodSO> fList = new List<FoodSO> { };
 
         List<RecipieSO> rList = new List<RecipieSO> { };
@@ -246,7 +307,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 			// If there's only 1 ingredient, check all recipies and add product to inventory
 			if (sList.Count == 1) {
 				for (int i = 0; i < recipies.Count; i++) {
-					if (sList[0].food == recipies[i].ingredients[0]) {
+					if (sList[0].food == recipies[i].ingredients[0] && recipies[i].tool == selected ) {
                         //selected
                         //inventory.AddItem(recipies[i].product, 1);
                         recipieFound = true;
@@ -280,10 +341,14 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 			for (int i = 0; i < inventory.Container.Count; i++) {
 				for (int j = 0; j < sList.Count; j++) {
 					if (inventory.Container[i].food == sList[j].food) {
-						if (inventory.Container[i].amount > 0) {
-							inventory.Container[i].amount -= 1;
 
-						}
+                        inventory.Container[i].RemoveAmount(1);
+
+                        if (inventory.Container[i].amount <= 0) {
+                            inventory.RemoveItem(inventory.Container[i].food);
+                        }
+
+						
 
 					}
 				}
@@ -294,7 +359,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 			// If there's only 1 ingredient, check all recipies and add product to inventory
 			if (sList.Count == 1) {
                 for (int i = 0; i < recipies.Count; i++) {
-                    if (sList[0].food == recipies[i].ingredients[0]) {
+                    if (sList[0].food == recipies[i].ingredients[0] && recipies[i].tool == selected) {
                         //selected
                         inventory.AddItem(recipies[i].product, 1);
                         break;
