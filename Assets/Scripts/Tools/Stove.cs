@@ -6,8 +6,6 @@ public class Stove : MonoBehaviour, IInteractable {
 
     public Tool tool;
 
-    public List<RecipieSO> Recipies;
-
 
     [SerializeField] private GameObject inter;
 
