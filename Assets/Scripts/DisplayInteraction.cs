@@ -19,6 +19,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public SlotSO oSlot;
 
+    public FoodSO dubFood;
 
     public int columns;
     public int rows;
@@ -330,7 +331,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 			}
 
             if (!recipieFound) {
-                canCraft=false;
+                //canCraft = false;
             }
 
 			if (!canCraft) {
@@ -364,7 +365,10 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                         inventory.AddItem(recipies[i].product, 1);
                         break;
 
-                    }
+                    } else {
+						inventory.AddItem(dubFood, 1);
+						break;
+					}
                 }
             }
 			// If there's more than 1 ingredient, check all recipies and add product to inventory
@@ -375,8 +379,11 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
                     if (hList.SetEquals(hRecipies) && selected == rList[i].tool) {
                         inventory.AddItem(recipies[i].product, 1);
                         break;
-                    }
-                }
+					} else {
+						inventory.AddItem(dubFood, 1);
+						break;
+					}
+				}
                 
             }
            

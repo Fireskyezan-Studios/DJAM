@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Container:
   - food: {fileID: 11400000, guid: 0634b0e6850e3334785b87a5ce7737a9, type: 2}
-    amount: 109
+    amount: 20
   - food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
-    amount: 49
+    amount: 39

@@ -16,4 +16,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6065cab451a93c54fa15533d8cc451a6, type: 2}
   tool: 4
   cookingDuration: 10
-  product: {fileID: 0}
+  product: {fileID: 11400000, guid: 4b14a6c96363f484f810286528119cff, type: 2}
