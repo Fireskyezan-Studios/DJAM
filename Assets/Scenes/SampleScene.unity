@@ -1035,6 +1035,7 @@ MonoBehaviour:
   recipies:
   - {fileID: 11400000, guid: f552454536f60e64da456bdef5906517, type: 2}
   oSlot: {fileID: 11400000, guid: 59e8300ce4555cf40a2fddd1191a8cbc, type: 2}
+  dubFood: {fileID: 11400000, guid: 1d461a229bf72334ea1ca66cd5fe4f5e, type: 2}
   columns: 0
   rows: 0
 --- !u!224 &1259768155 stripped
@@ -1118,7 +1119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c2685df59e10b47b4e3fc903e307e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Recipies: []
+  Recipies:
+  - {fileID: 11400000, guid: f552454536f60e64da456bdef5906517, type: 2}
   inter: {fileID: 1254412259}
 --- !u!224 &1480663416 stripped
 RectTransform:

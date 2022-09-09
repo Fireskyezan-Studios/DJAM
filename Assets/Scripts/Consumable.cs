@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class Consumable: MonoBehaviour
 {
   protected abstract void DoCook(Consumable c1, Consumable c2);
-  protected string name;
+  protected string _name;
 
   public void Cook(Consumable c1, Consumable c2)
   {
@@ -13,6 +13,6 @@ public abstract class Consumable: MonoBehaviour
 
   public string setName 
   {
-    set {name = value;}
+    set {_name = value;}
   }
 }

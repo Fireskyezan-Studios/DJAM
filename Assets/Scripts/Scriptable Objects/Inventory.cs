@@ -18,6 +18,21 @@ public class Inventory : ScriptableObject {
             Container.Add(new InventorySlot(_food, _amount));
         }
     }
+
+	public void RemoveItem(FoodSO _food) {
+		bool hasItem = false;
+		for (int i = 0; i < Container.Count; i++) {
+			if (Container[i].food == _food) {
+				Container.Remove(Container[i]);
+				hasItem = true;
+				break;
+			}
+		}
+		if (!hasItem) {
+			Debug.Log("Item not found");
+		}
+	}
+
 }
 
 
@@ -32,5 +47,8 @@ public class InventorySlot {
 	}
     public void AddAmount(int val) {
         amount += val;
+	}
+	public void RemoveAmount(int val) {
+		amount -= val;
 	}
 }

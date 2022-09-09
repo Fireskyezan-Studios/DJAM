@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   Container:
-  - food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
-    amount: -36
-  - food: {fileID: 11400000, guid: 2bbecc1d1071141418760490756c6c3e, type: 2}
-    amount: -37
   - food: {fileID: 11400000, guid: 0634b0e6850e3334785b87a5ce7737a9, type: 2}
-    amount: 26
+    amount: 20
+  - food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+    amount: 39
