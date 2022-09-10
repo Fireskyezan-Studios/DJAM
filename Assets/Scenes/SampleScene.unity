@@ -4048,6 +4048,7 @@ MonoBehaviour:
   pixelspu: 0
   animator: {fileID: 1789538570}
   playerLoc: {fileID: 1789538572}
+  movementEnabled: 1
 --- !u!70 &1789538568
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4146,7 +4147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3930128193331418342, guid: 51adfcfd2231f3e41b06c38433059d56, type: 3}
+  m_Sprite: {fileID: -604511736, guid: 8999447c4be0e004e9f0e8c33ec3517f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
