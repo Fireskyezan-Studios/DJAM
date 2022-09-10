@@ -359,30 +359,37 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
 			// If there's only 1 ingredient, check all recipies and add product to inventory
 			if (sList.Count == 1) {
+                Debug.Log("Got here");
+                bool hasRecipie = false;
                 for (int i = 0; i < recipies.Count; i++) {
                     if (sList[0].food == recipies[i].ingredients[0] && recipies[i].tool == selected) {
                         //selected
                         inventory.AddItem(recipies[i].product, 1);
+                        hasRecipie = true;
                         break;
 
-                    } else {
-						inventory.AddItem(dubFood, 1);
-						break;
-					}
+                    }
                 }
+
+                if (!hasRecipie) {
+					inventory.AddItem(dubFood, 1);
+				}
             }
 			// If there's more than 1 ingredient, check all recipies and add product to inventory
 			else {
+                bool hasRecipie = false;
                 for (int i = 0; i < rList.Count; i++) {
                     var hRecipies = new HashSet<FoodSO>(rList[i].ingredients);
 
                     if (hList.SetEquals(hRecipies) && selected == rList[i].tool) {
                         inventory.AddItem(recipies[i].product, 1);
+                        hasRecipie = true;
                         break;
-					} else {
-						inventory.AddItem(dubFood, 1);
-						break;
 					}
+				}
+
+                if (!hasRecipie) {
+					inventory.AddItem(dubFood, 1);
 				}
                 
             }

@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
     public Transform playerLoc;
     Vector2 oldPos;
 
-    bool movementEnabled = true;
+    public bool movementEnabled = true;
 
 
     private float dir = 3;

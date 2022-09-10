@@ -8,7 +8,6 @@ public class Tool
 
     private string _name;
 
-
     public Tool(string tName) { 
         _name = tName;
     }
@@ -21,16 +20,20 @@ public class Tool
 
     // Run in local Start method
     public void begin () {
-        //Debug.Log("Start");
-    } 
+		//Debug.Log("Start");
+		
+	} 
 
     // Run in local Interact method (from IInteractable)
     public void act(TOOL tool, GameObject inter) {
-        if (inter.activeInHierarchy) {
+		
+		if (inter.activeInHierarchy) {
             inter.SetActive(false);
-        } else {
+			GameObject.Find("Player").GetComponent<PlayerController>().movementEnabled = true;
+		} else {
             inter.SetActive(true);
-        }
+			GameObject.Find("Player").GetComponent<PlayerController>().movementEnabled = false;
+		}
 
 		GameObject bob = GameObject.Find("Interaction");
 
