@@ -14,6 +14,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public Inventory inventory;
 
+    public Animator animator;
 
     public List<RecipieSO> recipies;
 
