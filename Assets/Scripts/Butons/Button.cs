@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class Button
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    //for inventory
+    public GameObject player;
+
+    private FoodSO food;
+
+    public Button (FoodSO _fud, GameObject _player) {
+        food = _fud;
+        player = _player;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Click() {
+        player.GetComponent<pInventory>().addInv(food);
     }
 }

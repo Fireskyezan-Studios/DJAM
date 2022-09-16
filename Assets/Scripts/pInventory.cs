@@ -15,6 +15,14 @@ public class pInventory : MonoBehaviour
 
 	}
 
+	public Inventory getInv() {
+		return inventory;
+	}
+
+	public void addInv(FoodSO _food) {
+		inventory.AddItem(_food, 1);
+	}
+
 	public void inactivate(PointerEventData eventData) {
 		GameObject.Find("Interaction").GetComponent<DisplayInteraction>().FindNearestSlot2(eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition);
 	}
