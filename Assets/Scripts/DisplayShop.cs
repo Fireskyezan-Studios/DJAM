@@ -10,7 +10,7 @@ using Newtonsoft.Json.Linq;
 
 public class DisplayShop : MonoBehaviour {
 
-	public Inventory inventory;
+
 
 	public void buttonPress () {
 		Debug.Log("Click");
