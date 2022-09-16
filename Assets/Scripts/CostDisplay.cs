@@ -16,7 +16,7 @@ public class CostDisplay : MonoBehaviour
 	void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
-        text.text = "Cost: " + food.value.ToString();
+        text.text = food.name + ": $" + food.value.ToString();
     }
 
     // Update is called once per frame
