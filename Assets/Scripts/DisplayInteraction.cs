@@ -14,6 +14,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public Inventory inventory;
 
+    public Animator animator;
 
     public List<RecipieSO> recipies;
 
@@ -21,8 +22,6 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public FoodSO dubFood;
 
-    public int columns;
-    public int rows;
     private Vector2 currentLoc;
 
     private TOOL selected;
@@ -396,6 +395,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
            
 
 
+
             /*
             for (int i = 0; i < sList.Count; i++) {
                 fList.Add(sList[i].food);
@@ -414,11 +414,39 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
         }
     }
-     
 
-    /*public FoodSO Cook() {
-		slots[40] 
+    IEnumerator Cooking(List<SlotSO> sList, List<RecipieSO> rList, HashSet<FoodSO> hList) {
 
-        slots[41]
-    }*/
+        animator.SetBool("IsCrafting", true);
+
+        yield return new WaitForSeconds(3);
+
+        if (sList.Count == 1) {
+            for (int i = 0; i < recipies.Count; i++) {
+                if (sList[0].food == recipies[i].ingredients[0]) {
+                    //selected
+                    inventory.AddItem(recipies[i].product, 1);
+
+                }
+            }
+        } else {
+            for (int i = 0; i < rList.Count; i++) {
+                var hRecipies = new HashSet<FoodSO>(rList[i].ingredients);
+
+                if (hList.SetEquals(hRecipies) && selected == rList[i].tool) {
+                    inventory.AddItem(recipies[i].product, 1);
+                    break;
+                }
+            }
+
+        }
+
+        animator.SetBool("IsCrafting", false);
+
+    }
+        /*public FoodSO Cook() {
+            slots[40] 
+
+            slots[41]
+        }*/
 }

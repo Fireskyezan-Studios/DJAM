@@ -31,7 +31,7 @@ public class Tool
             inter.SetActive(false);
 			GameObject.Find("Player").GetComponent<PlayerController>().movementEnabled = true;
 		} else {
-            inter.SetActive(true);
+            inter.SetActive(true);  
 			GameObject.Find("Player").GetComponent<PlayerController>().movementEnabled = false;
 		}
 

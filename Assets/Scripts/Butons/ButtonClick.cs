@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Oven : MonoBehaviour, IInteractable {
+public class ButtonClick : MonoBehaviour {
 
-	public Tool tool;
-
-
-	[SerializeField] private GameObject inter;
+	/*public FoodSO food;
+	public GameObject player;
+	public int three = 3;
 
 	public bool canInteract() {
 		return tool.canAct();
@@ -15,10 +14,14 @@ public class Oven : MonoBehaviour, IInteractable {
 
 	public void Interact() {
 		tool.act(TOOL.Oven, inter);
+
 	}
 
+	
+
+	
+
 	void Start() {
-		tool = new Tool(name);
-		tool.begin();
-	}
+		player = GameObject.Find("Player");
+	}*/
 }
