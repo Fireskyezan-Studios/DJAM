@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ButtonClick : MonoBehaviour {
 
-	public FoodSO food;
+	/*public FoodSO food;
 	public GameObject player;
+	public int three = 3;
 
 	public bool canInteract() {
 		return tool.canAct();
@@ -16,7 +17,11 @@ public class ButtonClick : MonoBehaviour {
 
 	}
 
+	
+
+	
+
 	void Start() {
 		player = GameObject.Find("Player");
-	}
+	}*/
 }

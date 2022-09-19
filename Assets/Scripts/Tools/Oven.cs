@@ -15,7 +15,6 @@ public class Oven : MonoBehaviour, IInteractable {
 
 	public void Interact() {
 		tool.act(TOOL.Oven, inter);
-
 	}
 
 	void Start() {
