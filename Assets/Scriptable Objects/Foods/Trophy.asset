@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7307e00a0a601bc42ab43eeb344ca035, type: 3}
-  m_Name: Grapes
+  m_Name: Trophy
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: aa2405f76f4b37e4fa0f668c8e2fa01d, type: 3}
-  foodName: Grapes
-  description: It's like many purple blueberries.
-  value: 5
+  sprite: {fileID: 21300000, guid: 0aa2de9ea50f2704ca363b5d33e595af, type: 3}
+  foodName: Trophy
+  description: Wins the game! You can't really eat it though, so put it up on a shelf
+    and forget it, I guess.
+  value: 50
   prefab: {fileID: 5488020704300927503, guid: d4a5699de2b728d41942ceb5d03f462b, type: 3}

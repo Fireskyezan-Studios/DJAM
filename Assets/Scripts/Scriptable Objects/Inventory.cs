@@ -4,20 +4,21 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory")]
 public class Inventory : ScriptableObject {
-    public List<InventorySlot> Container = new List<InventorySlot>();
-    public void AddItem(FoodSO _food, int _amount) {
-        bool hasItem = false;
-        for (int i = 0; i < Container.Count; i++) {
-            if (Container[i].food == _food) {
-                Container[i].AddAmount(_amount);
-                hasItem = true;
-                break;
-            }
-        }
-        if (!hasItem) {
-            Container.Add(new InventorySlot(_food, _amount));
-        }
-    }
+	public List<InventorySlot> Container = new List<InventorySlot>();
+	public int money;
+	public void AddItem(FoodSO _food, int _amount) {
+		bool hasItem = false;
+		for (int i = 0; i < Container.Count; i++) {
+			if (Container[i].food == _food) {
+				Container[i].AddAmount(_amount);
+				hasItem = true;
+				break;
+			}
+		}
+		if (!hasItem) {
+			Container.Add(new InventorySlot(_food, _amount));
+		}
+	}
 
 	public void RemoveItem(FoodSO _food) {
 		bool hasItem = false;
@@ -31,6 +32,22 @@ public class Inventory : ScriptableObject {
 		if (!hasItem) {
 			Debug.Log("Item not found");
 		}
+	}
+
+	public bool canAfford (int cost) {
+		if (money - cost < 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public void subtractMoney(int cost) {
+		money -= cost;
+	}
+
+	public void AddMoney(int income) {
+		money += income;
 	}
 
 }

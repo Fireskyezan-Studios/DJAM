@@ -312,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: e033072824142ef40b8399d5d7eeebd3, type: 2}
 --- !u!114 &76658584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 6065cab451a93c54fa15533d8cc451a6, type: 2}
 --- !u!114 &96846550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: accc30ac7e2769841af3cdaa77147dae, type: 2}
 --- !u!114 &187952990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,6 +1029,7 @@ GameObject:
   - component: {fileID: 256358683}
   - component: {fileID: 256358682}
   - component: {fileID: 256358681}
+  - component: {fileID: 256358684}
   m_Layer: 5
   m_Name: buyTrophy
   m_TagString: Untagged
@@ -1100,9 +1101,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 256358684}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1150,6 +1151,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256358679}
   m_CullTransparentMesh: 1
+--- !u!114 &256358684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256358679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 0251436adbb40be44b1c07b1c67bfa93, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!224 &313442892 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 270750769108296910, guid: 2831b360e9d7e7644ad7eb75a30e567c, type: 3}
@@ -1274,7 +1290,7 @@ GameObject:
   - component: {fileID: 461163040}
   - component: {fileID: 461163039}
   m_Layer: 5
-  m_Name: uncookedRiceCost
+  m_Name: riceGrainsCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1312,7 +1328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: b89b8c4a026eacb43b2fe4f8ba627f35, type: 2}
 --- !u!114 &461163040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1422,6 +1438,7 @@ GameObject:
   - component: {fileID: 505999568}
   - component: {fileID: 505999567}
   - component: {fileID: 505999566}
+  - component: {fileID: 505999569}
   m_Layer: 5
   m_Name: buyBlueberry
   m_TagString: Untagged
@@ -1493,9 +1510,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 505999569}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1543,6 +1560,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505999564}
   m_CullTransparentMesh: 1
+--- !u!114 &505999569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505999564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 2a7fcc80214c6de4c91303f6d1c283e4, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1743,7 @@ GameObject:
   - component: {fileID: 547737629}
   - component: {fileID: 547737628}
   - component: {fileID: 547737627}
+  - component: {fileID: 547737630}
   m_Layer: 5
   m_Name: buySauerkraut
   m_TagString: Untagged
@@ -1782,9 +1815,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 547737630}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1832,6 +1865,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547737625}
   m_CullTransparentMesh: 1
+--- !u!114 &547737630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547737625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 1eadcb19dad23ed4098401eead62c320, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!224 &588748526 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1200811391811025866, guid: d0bb3b1f166025345acc693d4119f0b8, type: 3}
@@ -1945,7 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 1eadcb19dad23ed4098401eead62c320, type: 2}
 --- !u!114 &635618755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2104,7 +2152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 9177229308680564d9d4c146d6561e05, type: 2}
 --- !u!114 &674451019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2234,6 +2282,7 @@ GameObject:
   - component: {fileID: 700332584}
   - component: {fileID: 700332583}
   - component: {fileID: 700332582}
+  - component: {fileID: 700332585}
   m_Layer: 5
   m_Name: buyAle
   m_TagString: Untagged
@@ -2305,9 +2354,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 700332585}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2355,6 +2404,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700332580}
   m_CullTransparentMesh: 1
+--- !u!114 &700332585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 700332580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 6065cab451a93c54fa15533d8cc451a6, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &710415627
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,7 +2525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 1df87d34f55dce24dbdfa728c21c7421, type: 2}
 --- !u!114 &721797918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,6 +2705,141 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0357952, y: 3.5308127}
   m_EdgeRadius: 0
+--- !u!1 &859521784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 859521785}
+  - component: {fileID: 859521787}
+  - component: {fileID: 859521786}
+  m_Layer: 5
+  m_Name: MoneyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &859521785
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859521784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2058039403}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 175, y: -140}
+  m_SizeDelta: {x: 170, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &859521786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859521784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Funds: 00'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 23
+  m_fontSizeBase: 23
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &859521787
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859521784}
+  m_CullTransparentMesh: 1
 --- !u!1 &871291055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,7 +2891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: d419d107623dbb240aecc80aa91e55c8, type: 2}
 --- !u!114 &871291058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2904,6 +3103,7 @@ GameObject:
   - component: {fileID: 918333962}
   - component: {fileID: 918333961}
   - component: {fileID: 918333960}
+  - component: {fileID: 918333963}
   m_Layer: 5
   m_Name: buyDough
   m_TagString: Untagged
@@ -2975,9 +3175,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 918333963}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3025,6 +3225,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918333958}
   m_CullTransparentMesh: 1
+--- !u!114 &918333963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918333958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: f15a53b1dc53da54f93c9b4871d9eb58, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &931791869
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +3291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 463430408b6cae14abc8552495edd719, type: 2}
 --- !u!114 &931791872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3196,6 +3411,7 @@ GameObject:
   - component: {fileID: 1104769670}
   - component: {fileID: 1104769669}
   - component: {fileID: 1104769668}
+  - component: {fileID: 1104769671}
   m_Layer: 5
   m_Name: buyMushroom
   m_TagString: Untagged
@@ -3267,9 +3483,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1104769671}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3317,6 +3533,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104769666}
   m_CullTransparentMesh: 1
+--- !u!114 &1104769671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104769666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 1df87d34f55dce24dbdfa728c21c7421, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!224 &1127961932 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3354948985399481687, guid: 78ae5b129f196074e899560b4450b4b8, type: 3}
@@ -3339,8 +3570,9 @@ GameObject:
   - component: {fileID: 1192385835}
   - component: {fileID: 1192385834}
   - component: {fileID: 1192385833}
+  - component: {fileID: 1192385836}
   m_Layer: 5
-  m_Name: buyUncookedRice
+  m_Name: buyRiceGrains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3410,9 +3642,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1192385836}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3460,6 +3692,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1192385831}
   m_CullTransparentMesh: 1
+--- !u!114 &1192385836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192385831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: b89b8c4a026eacb43b2fe4f8ba627f35, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &1254402790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,7 +3758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 2a7fcc80214c6de4c91303f6d1c283e4, type: 2}
 --- !u!114 &1254402793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3760,6 +4007,7 @@ GameObject:
   - component: {fileID: 1299310431}
   - component: {fileID: 1299310430}
   - component: {fileID: 1299310429}
+  - component: {fileID: 1299310432}
   m_Layer: 5
   m_Name: buyEgg
   m_TagString: Untagged
@@ -3831,9 +4079,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1299310432}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3881,6 +4129,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299310427}
   m_CullTransparentMesh: 1
+--- !u!114 &1299310432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299310427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: accc30ac7e2769841af3cdaa77147dae, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &1346468527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,6 +4156,7 @@ GameObject:
   - component: {fileID: 1346468531}
   - component: {fileID: 1346468530}
   - component: {fileID: 1346468529}
+  - component: {fileID: 1346468532}
   m_Layer: 5
   m_Name: buyMilk
   m_TagString: Untagged
@@ -3964,9 +4228,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1346468532}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4014,6 +4278,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346468527}
   m_CullTransparentMesh: 1
+--- !u!114 &1346468532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346468527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: dd64739cf01844942955a777cf635e68, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &1373113490
 GameObject:
   m_ObjectHideFlags: 0
@@ -4026,6 +4305,7 @@ GameObject:
   - component: {fileID: 1373113494}
   - component: {fileID: 1373113493}
   - component: {fileID: 1373113492}
+  - component: {fileID: 1373113495}
   m_Layer: 5
   m_Name: buyBeef
   m_TagString: Untagged
@@ -4097,9 +4377,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1373113495}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4147,6 +4427,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1373113490}
   m_CullTransparentMesh: 1
+--- !u!114 &1373113495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373113490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 2bbecc1d1071141418760490756c6c3e, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!224 &1398170464 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1383968979780761128, guid: 5e80545388d6d434b8c363868fcfe5a3, type: 3}
@@ -4408,6 +4703,7 @@ GameObject:
   - component: {fileID: 1482389467}
   - component: {fileID: 1482389466}
   - component: {fileID: 1482389465}
+  - component: {fileID: 1482389468}
   m_Layer: 5
   m_Name: buyGrapes
   m_TagString: Untagged
@@ -4479,9 +4775,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1482389468}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4529,6 +4825,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482389463}
   m_CullTransparentMesh: 1
+--- !u!114 &1482389468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482389463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: e172e3295e47a0d40b18c7c17e3a9273, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &1490332918
 GameObject:
   m_ObjectHideFlags: 0
@@ -4580,7 +4891,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 2bbecc1d1071141418760490756c6c3e, type: 2}
 --- !u!114 &1490332921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4710,6 +5021,7 @@ GameObject:
   - component: {fileID: 1609771948}
   - component: {fileID: 1609771947}
   - component: {fileID: 1609771946}
+  - component: {fileID: 1609771949}
   m_Layer: 5
   m_Name: buyChicken
   m_TagString: Untagged
@@ -4781,9 +5093,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1609771949}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4831,6 +5143,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609771944}
   m_CullTransparentMesh: 1
+--- !u!114 &1609771949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1609771944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 0a62e15f644bae044a5a3bf0601f127e, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &1630953823
 GameObject:
   m_ObjectHideFlags: 0
@@ -4954,7 +5281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: f15a53b1dc53da54f93c9b4871d9eb58, type: 2}
 --- !u!114 &1647816838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5103,7 +5430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: e172e3295e47a0d40b18c7c17e3a9273, type: 2}
 --- !u!114 &1653575945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5213,6 +5540,7 @@ GameObject:
   - component: {fileID: 1655480429}
   - component: {fileID: 1655480428}
   - component: {fileID: 1655480427}
+  - component: {fileID: 1655480430}
   m_Layer: 5
   m_Name: buyLettuce
   m_TagString: Untagged
@@ -5284,9 +5612,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1655480430}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5334,6 +5662,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655480425}
   m_CullTransparentMesh: 1
+--- !u!114 &1655480430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655480425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: e033072824142ef40b8399d5d7eeebd3, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!224 &1664029505 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4444874783803296642, guid: d0835733d2b00c64492e6519c3c132c9, type: 3}
@@ -5530,7 +5873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 0251436adbb40be44b1c07b1c67bfa93, type: 2}
 --- !u!114 &1715194836
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6201,7 +6544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: a987f50fbfdd16c45acde03ab5103683, type: 2}
 --- !u!114 &1781006071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6455,6 +6798,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  j: 0
+  moneyText: {fileID: 859521786}
+  insufficientFunds: 0
   inter: {fileID: 1254412259}
 --- !u!1 &1790561047
 GameObject:
@@ -6507,7 +6853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: dd64739cf01844942955a777cf635e68, type: 2}
 --- !u!114 &1790561050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6656,7 +7002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 0a62e15f644bae044a5a3bf0601f127e, type: 2}
 --- !u!114 &1798024940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6844,6 +7190,7 @@ GameObject:
   - component: {fileID: 1867969041}
   - component: {fileID: 1867969040}
   - component: {fileID: 1867969039}
+  - component: {fileID: 1867969042}
   m_Layer: 5
   m_Name: buyStrawberry
   m_TagString: Untagged
@@ -6915,9 +7262,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1867969042}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6965,6 +7312,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1867969037}
   m_CullTransparentMesh: 1
+--- !u!114 &1867969042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867969037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 8749c1ed0301b2646b8bf7f48ef5468f, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &1872783088
 GameObject:
   m_ObjectHideFlags: 0
@@ -7209,6 +7571,7 @@ GameObject:
   - component: {fileID: 1972064494}
   - component: {fileID: 1972064493}
   - component: {fileID: 1972064492}
+  - component: {fileID: 1972064495}
   m_Layer: 5
   m_Name: buyLemon
   m_TagString: Untagged
@@ -7280,9 +7643,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1972064495}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7330,6 +7693,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972064490}
   m_CullTransparentMesh: 1
+--- !u!114 &1972064495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972064490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 9177229308680564d9d4c146d6561e05, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!224 &1973484209 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3325582755272653945, guid: e653c6a099ab29d4ca649c6b26645bb2, type: 3}
@@ -7396,6 +7774,7 @@ GameObject:
   - component: {fileID: 1992735177}
   - component: {fileID: 1992735176}
   - component: {fileID: 1992735175}
+  - component: {fileID: 1992735178}
   m_Layer: 5
   m_Name: buyWater
   m_TagString: Untagged
@@ -7467,9 +7846,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 1992735178}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7517,6 +7896,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992735173}
   m_CullTransparentMesh: 1
+--- !u!114 &1992735178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992735173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &2014372228
 GameObject:
   m_ObjectHideFlags: 0
@@ -7973,6 +8367,7 @@ RectTransform:
   - {fileID: 2021758263}
   - {fileID: 1254412260}
   - {fileID: 596563582}
+  - {fileID: 859521785}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8032,7 +8427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa1ef84c5b4c1ae47a16f09c46f78568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  food: {fileID: 11400000, guid: b19a1728c0770aa45b90402f3e08a04f, type: 2}
+  food: {fileID: 11400000, guid: 8749c1ed0301b2646b8bf7f48ef5468f, type: 2}
 --- !u!114 &2091780532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8142,6 +8537,7 @@ GameObject:
   - component: {fileID: 2121994171}
   - component: {fileID: 2121994170}
   - component: {fileID: 2121994169}
+  - component: {fileID: 2121994172}
   m_Layer: 5
   m_Name: buyFish
   m_TagString: Untagged
@@ -8213,9 +8609,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 2121994172}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8263,6 +8659,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121994167}
   m_CullTransparentMesh: 1
+--- !u!114 &2121994172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2121994167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: a987f50fbfdd16c45acde03ab5103683, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &2130435548
 GameObject:
   m_ObjectHideFlags: 0
@@ -8275,6 +8686,7 @@ GameObject:
   - component: {fileID: 2130435552}
   - component: {fileID: 2130435551}
   - component: {fileID: 2130435550}
+  - component: {fileID: 2130435553}
   m_Layer: 5
   m_Name: buyBanana
   m_TagString: Untagged
@@ -8346,9 +8758,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 2130435553}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8396,6 +8808,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130435548}
   m_CullTransparentMesh: 1
+--- !u!114 &2130435553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130435548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: 463430408b6cae14abc8552495edd719, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1 &2135716067
 GameObject:
   m_ObjectHideFlags: 0
@@ -8408,6 +8835,7 @@ GameObject:
   - component: {fileID: 2135716071}
   - component: {fileID: 2135716070}
   - component: {fileID: 2135716069}
+  - component: {fileID: 2135716072}
   m_Layer: 5
   m_Name: buyTomato
   m_TagString: Untagged
@@ -8479,9 +8907,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 596563583}
-        m_TargetAssemblyTypeName: DisplayShop, Assembly-CSharp
-        m_MethodName: buttonPress
+      - m_Target: {fileID: 2135716072}
+        m_TargetAssemblyTypeName: ButtonClick, Assembly-CSharp
+        m_MethodName: Click
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8529,6 +8957,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135716067}
   m_CullTransparentMesh: 1
+--- !u!114 &2135716072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135716067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e08518a1516c3d241b36dbbeea398764, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 11400000, guid: d419d107623dbb240aecc80aa91e55c8, type: 2}
+  inventory: {fileID: 11400000, guid: c6f3ae351f7e8044bb5f10729615808d, type: 2}
+  pinv: {fileID: 0}
 --- !u!1001 &18223909818787511
 PrefabInstance:
   m_ObjectHideFlags: 0
