@@ -18,7 +18,10 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public List<RecipieSO> recipies;
 
-    public SlotSO oSlot;
+	[System.NonSerialized]
+	public List<RecipieSO> knownRecipies;
+
+	public SlotSO oSlot;
 
     public FoodSO dubFood;
 
