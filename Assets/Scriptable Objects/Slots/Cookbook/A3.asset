@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe1848dad7ef7514787a2ddc88ba1880, type: 3}
+  m_Name: A3
+  m_EditorClassIdentifier: 
+  slot: {fileID: 380769388217651246, guid: d64ab9b0d00eb784bb2220bb20788ac3, type: 3}
+  taken: 0
+  food: {fileID: 0}
