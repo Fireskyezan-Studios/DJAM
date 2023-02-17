@@ -18,7 +18,10 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
 
     public List<RecipieSO> recipies;
 
-    public SlotSO oSlot;
+	[System.NonSerialized]
+	public List<RecipieSO> knownRecipies;
+
+	public SlotSO oSlot;
 
     public FoodSO dubFood;
 
@@ -38,7 +41,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
     public void FindNearestSlot2(Vector2 loc)
     {
         SlotSO smallest = slots[0];
-        float smallestD = 10000;
+        float smallestD = 1000000;
         for (int i = 0; i < slots.Count; i++)
         {
             if (
@@ -75,7 +78,7 @@ public class DisplayInteraction : MonoBehaviour, IDropHandler
         }
     }
 
-    //NOTE TO SELF: THINK ABOUT EXTRA CRAFTING SLOTS! LIST APPEND??
+    //NOTE TO SELF: THINK ABOUT EXTRA CRAFTING SLOTS! LIST APPEND?? // fixed
     public SlotSO FindNearestSlot(Vector2 loc)
     {
         SlotSO smallest = slots[0];

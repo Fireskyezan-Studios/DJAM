@@ -7,7 +7,8 @@ public enum TOOL {
 	Stove,
 	Oven,
 	Bowl,
-	Keg
+	Keg,
+	Cookbook
 }
 
 [CreateAssetMenu(fileName = "New Recipie", menuName = "Recipie")]

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7307e00a0a601bc42ab43eeb344ca035, type: 3}
   m_Name: Rice
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1586772494, guid: ff8c41a8672232b40b8d2dd0e49453e9, type: 3}
+  sprite: {fileID: 21300000, guid: f8ef583e49703c444bc03084a94d8ed8, type: 3}
   foodName: Rice
   description: It's not easy to make.
   value: 5

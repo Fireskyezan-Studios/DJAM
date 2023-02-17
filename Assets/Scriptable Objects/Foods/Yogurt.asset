@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7307e00a0a601bc42ab43eeb344ca035, type: 3}
   m_Name: Yogurt
   m_EditorClassIdentifier: 
-  sprite: {fileID: 1586772494, guid: ff8c41a8672232b40b8d2dd0e49453e9, type: 3}
+  sprite: {fileID: 21300000, guid: c6e04715f232cbf4cbd48c3f703ef294, type: 3}
   foodName: Yogurt
   description: It's fermented milk.
   value: 6
